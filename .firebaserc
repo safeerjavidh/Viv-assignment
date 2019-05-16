@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "staging": "viv-assignment",
+    "default": "viv-assignment"
+  }
+}

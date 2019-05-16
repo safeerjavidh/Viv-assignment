@@ -3,7 +3,19 @@
 module.exports = function(environment) {
   let ENV = {
     modulePrefix: 'viv-assignment',
-    environment,
+    environment:environment,
+    firebase: {
+      apiKey: "AIzaSyAciI-qfImH6AqcsndBVZWwOOx591t9H8E",
+      authDomain: "fir-to-do-app-2a9a1.firebaseapp.com",
+      databaseURL: "https://fir-to-do-app-2a9a1.firebaseio.com",
+      projectId: "fir-to-do-app-2a9a1",
+      storageBucket: "fir-to-do-app-2a9a1.appspot.com",
+      messagingSenderId: "287163481501",
+      appId: "1:287163481501:web:c1370b0a4c67fb31"
+    },
+    // torii: {
+    //   sessionServiceName: ‘session’
+    // },
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
@@ -20,10 +32,20 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline'",
     }
   };
-
   if (environment === 'development') {
+    ENV['ember-cli-mirage'] = {
+      enabled: false
+    };
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;

@@ -1,5 +1,18 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <div class="menu">
+      <h1 class="dis-inlineBlock">
+        <em>Akuta Same</em>
+      </h1>
+    <div class="links">
+     {{#link-to "todo" class="menu-contact"}}
+        Todo
+      {{/link-to}}
+      {{#link-to "goodreads" class="menu-about"}}
+        Goodreads App
+      {{/link-to}}
+    </div>
+  </div>
+  <div class="body">
+    {{outlet}}
+  </div>
+</div>

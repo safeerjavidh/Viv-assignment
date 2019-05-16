@@ -1,0 +1,26 @@
+<li class="listing">
+  <div class="details dis-inlineBlock">
+  	{{#if this.model.isEditable}}
+           <form class="form-inline">
+			  <div class="form-group">  	
+			    {{input type='text' placeholder='Task name' value=this.model.task class='form-control'}}
+			  </div>
+			  <button {{action 'updateTodo' this.model.task}} class="btn btn-primary btn-sm" >update</button>
+			  <button {{action 'cancel'}} class="btn btn-default btn-sm">cancel</button>
+			</form>
+    {{else}}
+	    <h4  class="dis-inlineBlock">
+	              {{input type="checkbox" checked=this.model.completed class="toggle"}}
+	              <span class="margin-l {{if this.model.completed "strike"}}">{{this.model.task}}</span>
+	    </h4>
+	    <div class="actions dis-inlineBlock">
+	                <a {{action 'editTodo'}} href class="edit-todo">
+	                  <span class="glyphicon glyphicon-pencil"></span>
+	                </a>
+	                <a {{action 'removeTodo' todo}} href class="remove-todo">
+	                  <span class="glyphicon glyphicon-remove"></span>
+	                </a>
+	    </div>
+	{{/if}}
+  </div>
+</li>

@@ -1,0 +1,17 @@
+<div class="jumbo">
+  <h2>Todo App</h2>
+  <p>
+    A simple todo app with option to strike out completed tasks.
+  </p>
+  <div>
+  {{input value=newTask class="custom-width"}}
+  <button type="button" class="btn btn-primary btn-sm"{{action "addTodo"}}>Add task</button>
+  </div>
+  <ul class="mt-10">
+  {{#each this.model as |todoTask|}}
+    <TodoList 
+    @model={{todoTask}}
+    @onConfirm={{action "removeTodo" todoTask}} />
+{{/each}}
+</ul>
+</div>

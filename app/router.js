@@ -7,6 +7,8 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+  this.route('goodreads');
+  this.route('todo',{ PATH: '/' });
 });
 
 export default Router;
